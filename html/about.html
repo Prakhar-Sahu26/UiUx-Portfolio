@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexura UI/UX Portfolio</title>
+    <link rel="stylesheet" href="../CSS/about.css">
+</head>
+<body>
+    
+      <nav class="navbar">
+        <div class="logo">
+            <img src="../public/logo.png" alt="Nexura Logo" />
+            <span>Nexura</span>
+        </div>
+    
+        <ul class="nav-links" id="nav-links">
+            <li><a href="./home.html">Home</a></li>
+            <li><a class="act" href="./about.html">About</a></li>
+            <li><a href="./projects.html">Projects</a></li>
+            <li><a href="./team.html">Team</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+    
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>    
+    <main>
+        <section class="hero">
+            <h1>Welcome to Nexura's <span>UI/UX Portfolio!</span></h1>
+            <p>
+                Dive into the creativity and innovation of Nexura’s UI/UX Design Department. Here, we craft
+                intuitive interfaces and engaging user experiences that bridge technology and design.
+            </p>
+            <p>
+                Explore our work, where every project reflects our passion for simplicity, functionality, and
+                user-centric solutions.
+            </p>
+            <a href="./projects.html" class="explore-btn">Explore Our Work &rarr;</a>
+        </section>
+    </main>
+</body>
+</html>
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Page</title>
+    <link rel="stylesheet" href="../CSS/team.css">
+</head>
+<body>
+  
+   <nav class="navbar">
+    <div class="logo">
+        <img src="../public/logo.png" alt="Nexura Logo" />
+        <span>Nexura</span>
+    </div>
+
+    
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./home.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./projects.html">Projects</a></li>
+      <li><a class="act" href="./team.html">Team</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+  </ul>
+
+    
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+
+    <section class="team-section">
+        <h1 class="section-title">The talented individuals behind our projects</h1>
+        <p class="section-description">
+            Showcasing their skills, roles, and passion for innovation.
+        </p>
+        <div class="team-container">
+           
+            <div class="team-card">
+                <img class="team-image" src="../public/img2.jpg" alt="team lead photo"></img>
+                <div class="team-info">
+                    <h3 class="team-name">Soumya Shrivastava</h3>
+                    <p class="team-role">The Executive Board Member</p>
+                </div>
+            </div>
+          
+            <div class="team-card">
+                <img class="team-image" src="../public/img1.jpg" alt="team lead photo"></img>
+                <div class="team-info">
+                    <h3 class="team-name">Vishal Singh Thakur</h3>
+                    <p class="team-role">The Mentor Head</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</body>
+</html>
+
