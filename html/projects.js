@@ -11,7 +11,7 @@ const closePopup = document.getElementById('closePopup');
 // Open the popup with different content
 openPopup.addEventListener('click', () => {
   popupTitle.textContent = 'Shoping Website';
-  Image.src = '../video2.jpg' // Add your video path here
+  Image.src = '../public/projectimg3.jpg' // Add your video path here
   popupVideo.load(); // Reload the video with the new source
   popupContainer.style.display = 'flex';
 });
