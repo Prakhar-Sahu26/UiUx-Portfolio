@@ -1,86 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexura Projects</title>
-    <link rel="stylesheet" href="../CSS/projects.css">
-    <script defer src="./projects.js"></script>
-</head>
-<body>
-         
-          <nav class="navbar">
-            <div class="logo">
-                <img src="../public/logo.png" alt="Nexura Logo" />
-                <span>Nexura</span>
-            </div>
-        
-            
-            <ul class="nav-links" id="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a class="act" href="./projects.html">Projects</a></li>
-                <li><a href="./team.html">Team</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        
-            
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-      
-        <script>
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('nav-links');
-        
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        </script> 
+    <link rel="stylesheet" href="demo.css" />
+    <script defer src="demo.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../public/logo.png" alt="Nexura Logo" />
+        <span>Nexura</span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a class="act" href="./projects.html">Projects</a></li>
+        <li><a href="./team.html">Team</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
 
     <section class="projects">
-        <h2>Our Projects</h2>
-        <p class="description">
-            The Projects Section showcases our team's creativity and innovation through a collection of impactful and visually engaging projects. Each project card highlights the key work we've done, offering a brief description, relevant images, and a call-to-action to explore more.
-        </p>
+      <h2>Our Projects</h2>
+      <p class="description">
+        The Projects Section showcases our team's creativity and innovation
+        through a collection of impactful and visually engaging projects. Each
+        project card highlights the key work we've done, offering a brief
+        description, relevant images, and a call-to-action to explore more.
+      </p>
 
-        <div class="project-cards">
-           
-            <div class="card">
-                <img src="../public/projectimg3.png" alt="Tour Booking App">
-                <h3>Shoping Website></h3>
-                <button class="details-btn">View Details ></button>
-            </div>
-
-            <div class="card">
-                <img src="../public/projectimg2.png" alt="Restaurant Website">
-                <h3>Fashion Website ></h3>
-                <button class="details-btn">View Details ></button>
-            </div>
-
-       
-            <div class="card">
-                <img src="../public/projectimg1.png" alt="Music App">
-                <h3>Fashion Landing Page ></h3>
-                <button id="openPopup" class="details-btn">View Details ></button>
-            </div>
+      <div class="project-cards">
+        <div class="card">
+          <img src="../public/projectimg3.png" alt="Tour Booking App" />
+          <h3>Shoping Website></h3>
+          <button id="openPopup2" class="details-btn">View Details ></button>
         </div>
-        <div id="popupContainer" class="popup-container">
-            <div class="popup">
-                <button id="closePopup" class="close-btn">&times;</button>
-                <h2>Popup Title</h2>
-                
-            </div>
+
+        <div class="card">
+          <img src="../public/projectimg2.png" alt="Restaurant Website" />
+          <h3>Fashion Website ></h3>
+          <button id="openPopup1" class="details-btn">View Details ></button>
         </div>
+
+        <div class="card">
+          <img src="../public/projectimg1.png" alt="Music App" />
+          <h3>Fashion Landing Page ></h3>
+          <button id="openPopup" class="details-btn">View Details ></button>
+        </div>
+      </div>
+      <!-- <div id="popupContainer" class="popup-container">
+        <div class="popup">
+          <button id="closePopup" class="close-btn">&times;</button>
+          <h2>Popup Title</h2>
+        </div>
+      </div> -->
+
+      <div id="popupContainer" class="popup-container">
+        <div class="popup">
+          <button id="closePopup" class="close-btn">&times;</button>
+          <h2 id="popupTitle">Popup Title</h2>
+          <video id="popupVideo" controls width="100%">
+            <source id="videoSource" src="" type="video/mp4" />
+            Your browser does not support HTML video.
+          </video>
+        </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
