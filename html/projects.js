@@ -9,7 +9,7 @@ const openPopup2 = document.getElementById('openPopup2');
 const closePopup = document.getElementById('closePopup');
 
 // Open the popup with different content
-openPopup.addEventListener('click', () => {
+openPopup2.addEventListener('click', () => {
   popupTitle.textContent = 'Shoping Website';
   Image.src = '../public/projectimg3.jpg' // Add your video path here
   popupVideo.load(); // Reload the video with the new source
@@ -23,7 +23,7 @@ openPopup1.addEventListener('click', () => {
   popupContainer.style.display = 'flex';
 });
 
-openPopup2.addEventListener('click', () => {
+openPopup.addEventListener('click', () => {
   popupTitle.textContent = 'Fashion Landing Page';
   videoSource.src = '../video1.mp4' // Add your video path here
   popupVideo.load(); // Reload the video with the new source
