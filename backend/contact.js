@@ -1,34 +1,54 @@
-const form = document.getElementById('contactForm');
-const responseDiv = document.getElementById('responseMessage'); 
+const express = require('express');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-    const formData = {
-        firstName: document.getElementById('firstName').value,
-        lastName: document.getElementById('lastName').value,
-        email: document.getElementById('email').value,
-        countryCode: document.getElementById('countryCode').value,
-        phoneNumber: document.getElementById('phoneNumber').value,
-        message: document.getElementById('message').value
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Email Transporter
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465, // Try 465 first (SSL)
+    secure: true, // true for 465, false for other ports
+    auth: {
+        user: 'nexurargpv@gmail.com',
+        pass: 'mcnpytqxzukmwscu' // Use App Password here
+    }
+});
+
+// Contact Form Route
+app.post('/contact', async (req, res) => {
+    const { name, email, message } = req.body;
+    console.log(req.body);
+
+    if (!name || !email || !message) {
+        return res.status(400).json({ error: 'All fields are required!' });
+    }
+
+    const mailOptions = {
+        from: email,
+        to: 'nexurargpv@gmail.com',
+        subject: `New Contact Form Submission from ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };
 
     try {
-        const response = await fetch('http://localhost:3000/save-data', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        });
-
-        if (response.ok) {
-            responseDiv.innerHTML = `Thanks for reaching out to us, <strong>${formData.firstName}</strong>!`;
-            responseDiv.style.display = 'block';
-            form.reset(); 
-        } else {
-            alert('Failed to submit data.');
-        }
+        await transporter.sendMail(mailOptions);
+        res.status(200).json({ success: 'Message sent successfully!' });
     } catch (error) {
-        console.error('Error:', error);
-        alert('Server error. Please try again later.');
+        res.status(500).json({ error: 'Failed to send message' });
     }
+});
+
+// Start Server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
